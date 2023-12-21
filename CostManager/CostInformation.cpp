@@ -19,6 +19,20 @@ CostInformation::CostInformation(string url, int countDays, int currentCost, int
 	historicalCost[0] = currentCost;
 }
 
+CostInformation::CostInformation(string url, int currentCount) {
+	if (currentCount < 0)
+		throw "currentCount is less than 0!";
+
+	this->url = url;
+	this->currentCount = currentCount;
+	this->countDays = 1;
+	this->historicalCost = new int[this->countDays];
+	this->currentDay = 1;
+	
+
+	historicalCost[0] = 0;
+}
+
 bool CostInformation::UpdateInfarmation(int newCost, int newCount) {
 	if (currentDay >= countDays)
 		throw "Space in the array is complete!";
@@ -126,4 +140,18 @@ void CostInformation::Print() {
 	cout << "Count (Current): " << currentCount << endl;
 	cout << "Day (Current): " << currentDay << endl;
 	cout << "Dynamic: " << translateCategory(GetDynamic()) << endl;
+}
+
+int CostInformation::operator [](int day) {
+	return this->historicalCost[day - 1];
+}
+
+ostream& operator << (ostream& out, CostInformation& object) {
+	out << "Url: " << object.url << endl;
+	out << "Cost (Current): " << object.GetCurrentCost() << endl;
+	out << "Count (Current): " << object.currentCount << endl;
+	out << "Day (Current): " << object.currentDay << endl;
+	out << "Dynamic: " << object.translateCategory(object.GetDynamic()) << endl;
+
+	return out;
 }

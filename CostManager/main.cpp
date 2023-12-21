@@ -9,23 +9,8 @@ int main() {
 	int currentCost;
 	int currentCount;
 
-	/*cout << "Url: ";
-	cin >> url;
-
-	cout << "Days: ";
-	cin >> daysCount;
-
-	cout << "Cost: ";
-	cin >> currentCost;
-
-	cout << "Count: ";
-	cin >> currentCount;*/
-
-
-
 
 	try {
-		//CostInformation cost1 { url, daysCount, currentCost, currentCount };
 		CostInformation cost1{ "http://asd.asd", 10, 200, 10 };
 
 		if (cost1.UpdateInfarmation(210, 8))
@@ -38,6 +23,12 @@ int main() {
 			cout << "Low count" << endl;
 
 		cost1.Print();
+
+	
+		cout << cost1[1] << endl << endl;
+
+		CostInformation cost2{ "http://url.ru", 10 };
+		cout << cost2 << endl;
 		
 	}
 	catch (const char* error_message) {
