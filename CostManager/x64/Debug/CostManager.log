@@ -1,9 +1,4 @@
 ﻿  CostInformation.cpp
-  main.cpp
-C:\Users\TEMP.EMIS.034\source\repos\CostManager\CostManager\main.cpp(8,6): warning C4101: daysCount: неиспользованная локальная переменная
-C:\Users\TEMP.EMIS.034\source\repos\CostManager\CostManager\main.cpp(9,6): warning C4101: currentCost: неиспользованная локальная переменная
-C:\Users\TEMP.EMIS.034\source\repos\CostManager\CostManager\main.cpp(10,6): warning C4101: currentCount: неиспользованная локальная переменная
-  Создание кода...
-C:\Users\TEMP.EMIS.034\source\repos\CostManager\CostManager\CostInformation.cpp(97): warning C4715: CostInformation::GetDynamic: значение возвращается не при всех путях выполнения
-C:\Users\TEMP.EMIS.034\source\repos\CostManager\CostManager\CostInformation.cpp(113): warning C4715: CostInformation::translateCategory: значение возвращается не при всех путях выполнения
-  CostManager.vcxproj -> C:\Users\TEMP.EMIS.034\source\repos\CostManager\x64\Debug\CostManager.exe
+C:\Users\TEMP.EMIS.037\Downloads\CostManager\CostManager\CostInformation.cpp(110): warning C4715: CostInformation::GetDynamic: значение возвращается не при всех путях выполнения
+C:\Users\TEMP.EMIS.037\Downloads\CostManager\CostManager\CostInformation.cpp(126): warning C4715: CostInformation::translateCategory: значение возвращается не при всех путях выполнения
+  CostManager.vcxproj -> C:\Users\TEMP.EMIS.037\Downloads\CostManager\x64\Debug\CostManager.exe

@@ -20,6 +20,9 @@ class CostInformation
 
 public:
 	CostInformation(string url, int countDays, int currentCost, int currentCount);
+
+	CostInformation(string url, int currentCount);
+
 	~CostInformation() {
 		delete historicalCost;
 	}
@@ -47,5 +50,10 @@ public:
 	int GetCurrentCount() const;
 
 	void Print();
+
+
+	int operator [](int day);
+
+	friend ostream& operator << (ostream& out, CostInformation& object);
 };
 
