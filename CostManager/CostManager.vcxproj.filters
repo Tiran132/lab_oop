@@ -21,12 +21,18 @@
     <ClCompile Include="CostInformation.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="CostRaitingInformation.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TaskInformation.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="CostInformation.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CostRaitingInformation.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

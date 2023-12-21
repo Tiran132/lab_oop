@@ -25,10 +25,9 @@ CostInformation::CostInformation(string url, int currentCount) {
 
 	this->url = url;
 	this->currentCount = currentCount;
-	this->countDays = 1;
-	this->historicalCost = new int[this->countDays];
+	this->historicalCost = new int[countDays];
 	this->currentDay = 1;
-	
+	this->countDays = 0;
 
 	historicalCost[0] = 0;
 }
@@ -140,18 +139,4 @@ void CostInformation::Print() {
 	cout << "Count (Current): " << currentCount << endl;
 	cout << "Day (Current): " << currentDay << endl;
 	cout << "Dynamic: " << translateCategory(GetDynamic()) << endl;
-}
-
-int CostInformation::operator [](int day) {
-	return this->historicalCost[day - 1];
-}
-
-ostream& operator << (ostream& out, CostInformation& object) {
-	out << "Url: " << object.url << endl;
-	out << "Cost (Current): " << object.GetCurrentCost() << endl;
-	out << "Count (Current): " << object.currentCount << endl;
-	out << "Day (Current): " << object.currentDay << endl;
-	out << "Dynamic: " << object.translateCategory(object.GetDynamic()) << endl;
-
-	return out;
 }

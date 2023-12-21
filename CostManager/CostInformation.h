@@ -7,9 +7,10 @@ using namespace std;
 enum ECostCategory { stable = 0, growing, falling, isMin, isMax};
 
 const int LOW_COUNT = 2;
-
+//template <typename T, int LOW_COUNT>
 class CostInformation
 {
+protected:
     string url;
 
     int currentCount;
@@ -27,7 +28,7 @@ public:
 		delete historicalCost;
 	}
 
-	bool UpdateInfarmation(int newCost, int newCount);
+	virtual bool UpdateInfarmation(int newCost, int newCount);
 
 
 	bool IsLow() const;
@@ -49,11 +50,21 @@ public:
 
 	int GetCurrentCount() const;
 
-	void Print();
+	virtual void Print();
 
 
-	int operator [](int day);
+	int operator [](int day) {
+		return this->historicalCost[day - 1];
+	}
 
-	friend ostream& operator << (ostream& out, CostInformation& object);
+	friend ostream& operator << (ostream& out, CostInformation& object) {
+		out << "Url: " << object.url << endl;
+		out << "Cost (Current): " << object.GetCurrentCost() << endl;
+		out << "Count (Current): " << object.currentCount << endl;
+		out << "Day (Current): " << object.currentDay << endl;
+		out << "Dynamic: " << object.translateCategory(object.GetDynamic()) << endl;
+
+		return out;
+	}
 };
 
