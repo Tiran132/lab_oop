@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "CostInformation.h"
+#include "CostRaitingInformation.h"
 
 using namespace std;
 
@@ -11,25 +11,28 @@ int main() {
 
 
 	try {
-		CostInformation cost1{ "http://asd.asd", 10, 200, 10 };
+		CostRaitingInformation cost1{ "http://asd.asd", 10, 200, 10, 10 };
+		CostInformation cost2{ "http://asd.asd", 10, 200, 10 };
 
-		if (cost1.UpdateInfarmation(210, 8))
+		CostInformation* objects[2];
+
+		objects[0] = (CostInformation*)&cost1;
+		objects[1] = &cost2;
+
+		if (cost1.UpdateInfarmation(210, 8, 8))
 			cout << "Low count" << endl;
 
-		if (cost1.UpdateInfarmation(200, 6))
+		if (cost1.UpdateInfarmation(200, 6, 9))
 			cout << "Low count" << endl;
 
-		if (cost1.UpdateInfarmation(190, 1))
+		if (cost1.UpdateInfarmation(190, 1, 10))
 			cout << "Low count" << endl;
 
-		cost1.Print();
+		cost1.Set_CountPosetiveReviews(2);
 
-	
-		cout << cost1[1] << endl << endl;
-
-		CostInformation cost2{ "http://url.ru", 10 };
-		cout << cost2 << endl;
-		
+		(*objects[0]).Print();
+		cout << endl;
+		(*objects[1]).Print();
 	}
 	catch (const char* error_message) {
 		cout << error_message << endl;
